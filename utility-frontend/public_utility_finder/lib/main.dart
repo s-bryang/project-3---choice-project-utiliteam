@@ -8,50 +8,27 @@ void main() => runApp(MyApp());
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
+
+  //test method for printing of user location
+  void printPos()
+  {
+  }
 }
 
 class _MyAppState extends State<MyApp> {
   late GoogleMapController mapController;
   late Position currentPosition;
-  String currentAddress = "";
+  late String currentAddress;
 
-  final Geolocator locator = Geolocator() .. forceAndroidLocationManager;
   final LatLng _center = const LatLng(45.521563, -122.677433);
-
-  getCurrentLocation()
-  {
-    locator.getCurrentPosition(desiredAccuracy:LocationAccuracy.best).then((Position pos)
-    {
-      setState(() 
-      {
-        currentPosition = pos;
-      });
-      getAddress();
-    }).catchError((err)
-    {
-      print(err);
-    });
+  Future<void> initializeAppState()
+  async {
+    
+    currentPosition = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high,
+    forceAndroidLocationManager: true).catchError((error) => print(error));
+    print(currentPosition.toString());
   }
-
-getAddress() async
-{
-  try
-  {
-    List<Placemark> places = await 
-    locator.placemarkFromCoordinates(currentPosition.latitude, 
-    currentPosition.longitude);
-
-    Placemark p = places[0];
-    setState(()
-    {
-      currentAddress = "${p.locality}, ${p.postalCode}, ${p.country}";
-    });
-  }
-  catch (excep)
-  {
-    print(excep);
-  }
-}
+  
 
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
