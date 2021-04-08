@@ -8,11 +8,6 @@ void main() => runApp(MyApp());
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
-
-  //test method for printing of user location
-  void printPos()
-  {
-  }
 }
 
 class _MyAppState extends State<MyApp> {
@@ -21,13 +16,13 @@ class _MyAppState extends State<MyApp> {
   late String currentAddress;
 
   final LatLng _center = const LatLng(45.521563, -122.677433);
-  Future<void> initializeAppState()
-  async {
+  // Future<void> initializeAppState()
+  // async {
     
-    currentPosition = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high,
-    forceAndroidLocationManager: true).catchError((error) => print(error));
-    print(currentPosition.toString());
-  }
+  //   currentPosition = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high,
+  //   forceAndroidLocationManager: true).catchError((error) => print(error));
+  //   print(currentPosition.toString());
+  // }
   
 
   void _onMapCreated(GoogleMapController controller) {
@@ -42,14 +37,36 @@ class _MyAppState extends State<MyApp> {
           title: Text('Google Maps Display'),
           backgroundColor: Colors.green[700],
         ),
-        body: GoogleMap(
+        body: Center(
+          child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget> [ 
+              TextButton(
+                child: Text("Obtain location"),
+                onPressed: () {
+                  getCurrentLocation();
+            }
+        ),
+          GoogleMap(
           onMapCreated: _onMapCreated,
           initialCameraPosition: CameraPosition(
             target: _center,
             zoom: 11.0,
+            ),
           ),
-        ),
+        ],
       ),
-    );
+    )));
   }
-}
+  getCurrentLocation() {
+    Geolocator
+    .getCurrentPosition(desiredAccuracy: LocationAccuracy.best)
+    .then((Position pos) {
+      setState((){
+        currentPosition = pos;
+      });
+    }).catchError((err){
+      print(err);
+      });
+    }
+  }
