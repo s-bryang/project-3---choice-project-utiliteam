@@ -12,7 +12,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   late GoogleMapController mapController;
-  late Position currentPosition;
+  Position? currentPosition = null;
   late String currentAddress;
 
   final LatLng _center = const LatLng(45.521563, -122.677433);
@@ -41,12 +41,6 @@ class _MyAppState extends State<MyApp> {
           child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget> [ 
-              TextButton(
-                child: Text("Obtain location"),
-                onPressed: () {
-                  getCurrentLocation();
-            }
-        ),
           GoogleMap(
           onMapCreated: _onMapCreated,
           initialCameraPosition: CameraPosition(
@@ -54,6 +48,16 @@ class _MyAppState extends State<MyApp> {
             zoom: 11.0,
             ),
           ),
+          if(currentPosition != null)
+            Text(
+              "Latitude: ${currentPosition!.latitude}, Longitude: ${currentPosition!.longitude}"
+              ),
+              TextButton(
+                child: Text("Obtain location"),
+                onPressed: () {
+                  getCurrentLocation();
+            }
+        ),
         ],
       ),
     )));
