@@ -37,32 +37,37 @@ class _MyAppState extends State<MyApp> {
           title: Text('Google Maps Display'),
           backgroundColor: Colors.green[700],
         ),
-        body: GoogleMap(
-          onMapCreated: _onMapCreated,
-          initialCameraPosition: CameraPosition(
-            target: _center,
-            zoom: 11.0,
+        body: Row(
+          children: [
+            Expanded(
+              child:  GoogleMap(
+              onMapCreated: _onMapCreated,
+              initialCameraPosition: CameraPosition(
+                target: _center,
+                zoom: 11.0,
+              ),
+            ),
           ),
-        ),
-        // Center(
-        //   child: Column(
-        //     mainAxisAlignment: MainAxisAlignment.center,
-        //     children: <Widget> [
-        //       if(currentPosition != null)
-        //     Text(
-        //       "Latitude: ${currentPosition!.latitude}, Longitude: ${currentPosition!.longitude}"
-        //       ),
-        //       TextButton(
-        //         child: Text("Obtain location"),
-        //         onPressed: () {
-        //           getCurrentLocation();
-        //         }
-        //       )
-        //     ],
-        //   )
-        // )
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget> [
+                if(currentPosition != null)
+              Text(
+                "Latitude: ${currentPosition!.latitude}, Longitude: ${currentPosition!.longitude}"
+                ),
+                TextButton(
+                  child: Text("Obtain location"),
+                  onPressed: () {
+                    getCurrentLocation();
+                  }
+                )
+              ],
+          )
+        )
+      ]
       ),
-    );
+    ));
   }
   getCurrentLocation() {
     Geolocator
