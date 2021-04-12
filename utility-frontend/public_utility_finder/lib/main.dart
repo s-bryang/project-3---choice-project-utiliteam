@@ -57,6 +57,9 @@ class _MyAppState extends State<MyApp> {
                 Text(
                   "Address: ${currentAddress}"
                 ),
+                Text(
+                  "Would you like the app to use your current location?"
+                ),
                 TextButton(
                   child: Text("Obtain location"),
                   onPressed: () {
