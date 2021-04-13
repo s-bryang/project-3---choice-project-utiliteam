@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7754534-e923-49a2-bf17-d0c283143799" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="afb2a479-7862-4b97-a42f-18fcb0102695" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,7 +10,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1r08TgW9wxveP2aBi3Z7U8XgDiu" />
+  <component name="ProjectId" id="1r5qGORxad2Um1Q7PUpmZ7v5hcU" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -22,35 +20,23 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
   </component>
-  <component name="RunManager">
-    <configuration name="main.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application" temporary="true" nameIsGenerated="true">
-      <option name="filePath" value="$PROJECT_DIR$/utility-frontend/public_utility_finder/lib/main.dart" />
-      <option name="workingDirectory" value="$PROJECT_DIR$/utility-frontend/public_utility_finder" />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Dart Command Line App.main.dart" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b7754534-e923-49a2-bf17-d0c283143799" name="Default Changelist" comment="" />
-      <created>1618101660286</created>
+      <changelist id="afb2a479-7862-4b97-a42f-18fcb0102695" name="Default Changelist" comment="" />
+      <created>1618276211786</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1618101660286</updated>
+      <updated>1618276211786</updated>
     </task>
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="176" y="124" key="#main.dart" timestamp="1618212442094">
+    <state x="0" y="47" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1618276374712">
       <screen x="0" y="0" width="1536" height="783" />
     </state>
-    <state x="176" y="124" key="#main.dart/0.0.1536.783@0.0.1536.783" timestamp="1618212442094" />
+    <state x="0" y="47" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.783@0.0.1536.783" timestamp="1618276374712" />
   </component>
 </project>
